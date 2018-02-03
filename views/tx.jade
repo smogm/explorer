@@ -7,6 +7,19 @@ block content
       | #{tx.txid}
     .panel.panel-default
       .panel-heading.hidden-xs
+        if settings.labels[tx.txid]
+          if settings.labels[tx.txid].type
+            label(class='label label-#{settings.labels[tx.txid].type} pull-right hidden-xs', style='margin-left:15px;')
+              =settings.labels[tx.txid].label
+              if settings.labels[tx.txid].url
+                a(href='#{settings.labels[tx.txid].url}', target='_blank')
+                  span.fa.fa-question-circle(style='margin-left:5px;')
+          else
+            label.label.label-default.pull-right.hidden-xs(style='margin-left:15px;')
+              =settings.labels[tx.txid].label
+              if settings.labels[tx.txid].url
+                a(href='#{settings.labels[tx.txid].url}', target='_blank')
+                  span.fa.fa-question-circle(style='margin-left:5px;')
         strong #{settings.symbol} txid: #{tx.txid}
         a(href='/api/getrawtransaction?txid=#{tx.txid}&decrypt=1')
           span.glyphicon.glyphicon-info-sign.iquidus.pull-right
