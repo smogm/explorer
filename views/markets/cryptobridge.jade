@@ -21,14 +21,14 @@ block market_view
               th #{settings.locale.mkt_change}
           tbody
             tr
-              td #{parseFloat(marketdata.data.summary.High).toFixed(8)}
-              td #{parseFloat(marketdata.data.summary.Low).toFixed(8)}
-              td #{parseFloat(marketdata.data.summary.Volume).toFixed(8)}
-              td.hidden-xs #{parseFloat(marketdata.data.summary.Bid).toFixed(8)}
-              td.hidden-xs #{parseFloat(marketdata.data.summary.Ask).toFixed(8)}
-              td.hidden-xs #{parseFloat(marketdata.data.summary.PrevDay).toFixed(8)}
-              td.hidden-xs #{parseFloat(marketdata.data.summary.Last).toFixed(8)}
-              - var price_change = (parseFloat(marketdata.data.summary.Change)).toFixed(2);
+              td #{parseFloat(marketdata.data.summary.high).toFixed(8)}
+              td #{parseFloat(marketdata.data.summary.low).toFixed(8)}
+              td #{parseFloat(marketdata.data.summary.volume).toFixed(8)}
+              td.hidden-xs #{parseFloat(marketdata.data.summary.bid).toFixed(8)}
+              td.hidden-xs #{parseFloat(marketdata.data.summary.ask).toFixed(8)}
+              td.hidden-xs #{parseFloat(marketdata.data.summary.prevDay).toFixed(8)}
+              td.hidden-xs #{parseFloat(marketdata.data.summary.last).toFixed(8)}
+              - var price_change = (parseFloat(marketdata.data.summary.change)).toFixed(2);
               if price_change >= 0
                 td.success +#{price_change} %
               else
